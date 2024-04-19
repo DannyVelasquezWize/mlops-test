@@ -1,11 +1,12 @@
 # src/modelo_salud.py
 import pandas as pd
+from typing import Tuple
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, log_loss
 from joblib import dump, load
 
-def load_data(filename_):
+def load_data(filename_:str) -> Tuple[pd.DataFrame, pd.Series]:
     data = pd.read_csv(filename_)
     X = data.drop('num', axis=1)
     y = data['num']
