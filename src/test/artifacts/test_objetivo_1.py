@@ -11,4 +11,4 @@ def test_load_data():
     var1, var2 = load_data(filepath_)
     assert type(var1) == pd.DataFrame
     assert type(var2) == pd.Series
-    assert 'num' in var1.columns
+    assert 'num' not in var1.columns
